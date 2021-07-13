@@ -65,7 +65,7 @@ export default function CountrySelect() {
         </div>
         
          <div className="parameter-select">
-         <Dropdown options={options} value={selectedCategory} onChange={onCategoryChange} placeholder="Select Category" />
+         <Dropdown options={options} value={selectedCategory} onChange={onCategoryChange} placeholder="Select Category"/>
         </div>
         <br/>
         <button type="submit">Graph me</button>

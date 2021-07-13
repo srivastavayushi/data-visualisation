@@ -13,7 +13,7 @@ export default function Graph() {
   let finalGraphData=[];
   let graphData=[];
   let countryMatch=[];
-
+ console.log(selectedData[0].selectedCategory);
   if(selectedData.length>1){
   countryArray = selectedData[0].selectedCountry.map(country=>{return country});
 
@@ -24,25 +24,21 @@ export default function Graph() {
   });
 
   const graphDataTwo = countryMatch.forEach(obj=>finalGraphData.push(obj.map(innerObj=>([innerObj.year,innerObj.value]))));
-
 };
+const dataPoints = [];
+finalGraphData.map(dataset => {
+  const newDataSet={
+  label : "Series 1",
+  data: dataset,
+}
+ dataPoints.push(newDataSet);
+ return newDataSet;
+})
+console.log(dataPoints);
 
-  const dataGraph = React.useMemo(
-    () => [
-      {
-        label: 'Series 1',
-        data: finalGraphData[0],
-      },
-      {
-        label: 'Series 2',
-        data: finalGraphData[1],
-      },
-      {
-        label: 'Series 2',
-        data: finalGraphData[2],
-      }
-    ],
-    [finalGraphData]
+const dataGraph = React.useMemo(
+    () => dataPoints,
+    [dataPoints]
   )
   const series = React.useMemo(
     () => ({
@@ -59,20 +55,8 @@ export default function Graph() {
   )
  
   return (
-    <div
-      style={{
-        width: '400px',
-        height: '300px'
-      }}
-      className="chart"
-    >
-
-      
+    <div>
       {finalGraphData.length > 0 &&
-    <Chart data={dataGraph} series={series} axes={axes} tooltip/>
-      }
-        <br/>
-     {finalGraphData.length > 0 &&
      <a href="/"><button>Add another graph</button></a>
     
       }
@@ -80,7 +64,15 @@ export default function Graph() {
       <div> <h3>Kindly select the options to view the chart.</h3>
       <h5>In case you have already selected the options, we are unable to find the data relating to your choices. Try with some other set of options !</h5></div>
       } 
-      
+    {finalGraphData.length > 0 && selectedData[0].selectedCategory !== undefined && <div
+      style={{
+        width: '400px',
+        height: '300px'
+      }}
+      className="chart"
+    > 
+    <Chart data={dataGraph} series={series} axes={axes} tooltip/>
+    </div>}
     </div>
   )
 }
