@@ -26,11 +26,7 @@ export default function Graph() {
   const graphDataTwo = countryMatch.forEach(obj=>finalGraphData.push(obj.map(innerObj=>([innerObj.year,innerObj.value]))));
 
 };
-const onButtonClick = (e)=>{
-  finalGraphData = [];
-  console.log("button clicked");
-  console.log(finalGraphData);
-}
+
   const dataGraph = React.useMemo(
     () => [
       {
@@ -77,13 +73,13 @@ const onButtonClick = (e)=>{
       }
         <br/>
      {finalGraphData.length > 0 &&
-    <button onClick={onButtonClick}>Add another graph</button>
+     <a href="/"><button>Add another graph</button></a>
+    
       }
       {graphData.length === 0 && 
       <div> <h3>Kindly select the options to view the chart.</h3>
       <h5>In case you have already selected the options, we are unable to find the data relating to your choices. Try with some other set of options !</h5></div>
-     
-        } 
+      } 
       
     </div>
   )

@@ -49,6 +49,7 @@ export default function CountrySelect() {
               selectedCountry,
               selectedCategory,
             }   
+            window.history.replaceState(null, "Search Results", `localhost/?country=${selectedCountry}&category=${selectedCategory}`);
             console.log(newSelectedData.selectedCountry);         
             addSelectedData(newSelectedData);
           }
