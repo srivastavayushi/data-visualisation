@@ -51,7 +51,7 @@ export default function CountrySelect() {
               selectedCategory,
             }   
             window.history.replaceState(null, "Search Results", `${url}?country=${selectedCountry}&category=${selectedCategory}`);
-            console.log(newSelectedData.selectedCountry);         
+                  
             addSelectedData(newSelectedData);
           }
         
