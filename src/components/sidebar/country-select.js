@@ -6,6 +6,7 @@ import { useAPI , APIContext} from "../context/ApiContext";
 export default function CountrySelect() {
     const { data } = useAPI();
  
+    const url = window.location.href;
     //Write logic to render all countries as dropdown options
 
        // Create an array of all unique countries
@@ -49,7 +50,7 @@ export default function CountrySelect() {
               selectedCountry,
               selectedCategory,
             }   
-            window.history.replaceState(null, "Search Results", `localhost/?country=${selectedCountry}&category=${selectedCategory}`);
+            window.history.replaceState(null, "Search Results", `${url}?country=${selectedCountry}&category=${selectedCategory}`);
             console.log(newSelectedData.selectedCountry);         
             addSelectedData(newSelectedData);
           }
