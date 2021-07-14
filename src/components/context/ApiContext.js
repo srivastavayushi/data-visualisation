@@ -6,8 +6,8 @@ const initialState = {
   selectedData: [
   {
       id:0,
-      selectedCountry: "kkkk",
-      selectedCategory: "kkkk",
+      selectedCountry: undefined,
+      selectedCategory: undefined,
   },
   ]
 }

@@ -6,6 +6,7 @@ import { useAPI , APIContext} from "../context/ApiContext";
 export default function Graph() {
   const { data } = useAPI();
   const { selectedData } = useContext(APIContext);
+  console.log(selectedData);
 
   let countryArray=[];
   // eslint-disable-next-line
@@ -14,7 +15,7 @@ export default function Graph() {
   let countryMatch=[];
  
   if(selectedData.length>1){
-  countryArray = selectedData[0].selectedCountry.map(country=>{return country});
+  countryArray = selectedData[0].selectedCountry.map(country=>{return country[0]});
 
   countryArray.forEach(singleCountry=>{
     graphData = data.filter(obj=>(obj.country_or_area === singleCountry) && (obj.category ===selectedData[0].selectedCategory));
@@ -60,11 +61,10 @@ const dataGraph = React.useMemo(
      <a href="/"><button>Add another graph</button></a>
     
       }
-      {graphData.length === 0 && 
-      <div> <h3>Kindly select the options to view the chart.</h3>
-      <h5>In case you have already selected the options, we are unable to find the data relating to your choices. Try with some other set of options !</h5></div>
-      } 
-    {finalGraphData.length > 0 && selectedData[0].selectedCategory !== undefined && <div
+       {(graphData.length === 0 ||  selectedData[0].selectedCategory === undefined || selectedData[0].selectedYear === null || selectedData[0].selectedCountry ===null ) && <div> <h3>Kindly select the options to view the chart.</h3>
+      <h5>In case you have already selected the options, we are unable to find the data relating to your choices. Try with some other set of options !</h5><a href="/"><button>Try Again</button></a></div>}
+       
+    {finalGraphData.length > 0 && selectedData[0].selectedCategory !== undefined && selectedData[0].selectedYear !== null && <div
       style={{
         width: '400px',
         height: '300px'

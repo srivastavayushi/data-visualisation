@@ -20,12 +20,13 @@
 
 .dropdowns{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 1rem;
 }
 
 .parameter-select{
   margin-top: 1rem;
+  width:20vw;
 }
 
 .chart {
