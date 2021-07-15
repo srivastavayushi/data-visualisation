@@ -20,9 +20,9 @@
 
 ## Bonus Features
 
-:gift:   Select multiple countries for the same time period 
+:gift: Select multiple countries for the same time period 
 </br>
-:gift:   Map visualization
+:gift: Map visualization
 </br>
 
 ## :blue_book: Guidelines Followed 
