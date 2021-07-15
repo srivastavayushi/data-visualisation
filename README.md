@@ -58,15 +58,15 @@ npm run build
 
 ## A few questions :question:
 
-#### What was the most challenging part?
+### What was the most challenging part?
 
 Ans : The most challenging part was managing state without redux within different components and error handling within various inputs in the dropdown.
 
-#### What was the most fun part?
+### What was the most fun part?
 
 Ans : Displaying graphs of several countries at the same time was the most fun part.
 
-#### What do you think is wrong with this task or could be made better in this task?
+### What do you think is wrong with this task or could be made better in this task?
 
 Ans : I think if the website was more responsive and an efficient database like MongoDB was used it would be easy to fetch and store the data.
 
