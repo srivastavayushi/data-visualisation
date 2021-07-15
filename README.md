@@ -37,11 +37,12 @@
  
 ## :bar_chart: Data converting script
  ```bash
-# Install dependencies
+# Import packages
 import pandas as pd
 import json
 import numpy as np
-df = pd.read_csv("F:/Projects/Python/gas-emission/greenhouse_gas_inventory_data_data.csv")
+path = "F:/Projects/Python/gas-emission/greenhouse_gas_inventory_data_data.csv"
+df = pd.read_csv(path)
 df.dropna()
 result = df.to_json(orient="records")
 parsed = json.loads(result)
