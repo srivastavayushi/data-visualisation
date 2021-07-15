@@ -6,7 +6,7 @@ import { useAPI , APIContext} from "../context/ApiContext";
 export default function Graph() {
   const { data } = useAPI();
   const { selectedData } = useContext(APIContext);
-  console.log(selectedData);
+  
 
   let countryArray=[];
   // eslint-disable-next-line

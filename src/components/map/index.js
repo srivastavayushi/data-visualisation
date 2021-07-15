@@ -3,13 +3,13 @@ import { useAPI , APIContext} from "../context/ApiContext";
 import {
   GoogleMap,
   useLoadScript,
-  Marker,
+  InfoWindow
 } from "@react-google-maps/api";
 
 
 const mapContainerStyle = {
-  height: "80vh",
-  width: "50vw",
+  height: "70vh",
+  width: "65vw",
 };
 const options = {
   disableDefaultUI: true,
@@ -25,6 +25,7 @@ export default function Map() {
   const { data } = useAPI();
   const { selectedData } = useContext(APIContext);
 
+
   // FETCH DATA STATE 
   const [ libraries ] = useState(['places']);
 
@@ -35,6 +36,7 @@ export default function Map() {
   let countryMatch=[];
   let i = 0;
 
+  console.log(selectedData);
   if(selectedData.length>=2){
     countryArray = selectedData[0].selectedCountry.map(country=>{return country[0]});   
 
@@ -85,15 +87,37 @@ export default function Map() {
         onLoad={onMapLoad}
       >
         {countryMatch.map(country=>{
-        
+          console.log(country[0].value);
+
+          const styleObj = {
+            fontSize: 20,
+            fontWeight: 'bold',
+            color: "#4a54f1",
+            textAlign: "center",
+            paddingTop: "15px",
+            paddingBottom: "10px",
+        }
           return(
-          <Marker
-          key={country[1].lat}
+            <InfoWindow
+            key={country[1].lat}
             position={{
               lat: country[1].lat, 
               lng: country[1].lng,
             }}
-            />
+
+    >
+      <div>
+      <div style={styleObj}>{country[0].country_or_area}</div> 
+         <div>Year : {country[0].year} </div>
+         <div>Value : {country[0].value} </div>
+     
+      </div>
+    </InfoWindow>
+
+       
+       
+            
+            
         )})}
           
                
