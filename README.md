@@ -40,7 +40,7 @@
 # Install dependencies
 npm install
 ```
-## :bar_chart: Instructions to start the project
+## :computer: Instructions to start the project
 
 ```bash
 # Install dependencies
