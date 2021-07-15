@@ -1,18 +1,20 @@
 # data-visualisation
 
+## Live Demo : https://data-visualisation-blue-stacks.netlify.app/
+
 ## Tasks Completed 
 
-:white_check_mark: : Decide the best format based on the feature mentioned below
+:white_check_mark:   Decide the best format based on the feature mentioned below
 </br>
-:white_check_mark: : Store the JSON files on the frontend
+:white_check_mark:  Store the JSON files on the frontend
 </br>
-:white_check_mark: : Select time period and country
+:white_check_mark:  Select time period and country
 </br>
-:white_check_mark: : Select/deselect different parameters like CO2, NO2, etc
+:white_check_mark:  Select/deselect different parameters like CO2, NO2, etc
 </br>
-:white_check_mark: : Keep the state of the UI in the URL
+:white_check_mark:  Keep the state of the UI in the URL
 </br>
-:white_check_mark: : Must have a line chart
+:white_check_mark:  Must have a line chart
 </br>
 </br>
 
